@@ -1,0 +1,13 @@
+.navbar-custom {
+    background-color: brown;
+  }
+  
+  .navbar-custom .navbar-brand,
+  .navbar-custom .nav-link {
+    color: white;
+  }
+  
+  .navbar-custom .nav-link.active {
+    color: #ccc;
+  }
+  
