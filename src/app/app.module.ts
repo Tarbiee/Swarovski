@@ -9,6 +9,7 @@ import { AddJewelComponent } from './add-jewel/add-jewel.component';
 import { JewelsComponent } from './jewels/jewels.component';
 import { EditJewelsComponent } from './edit-jewels/edit-jewels.component';
 import { HomeComponent } from './home/home.component';
+import {  HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
