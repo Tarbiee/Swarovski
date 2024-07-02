@@ -1,1 +1,40 @@
-<p>add-jewel works!</p>
+<div class="container mt-4 bg-grey">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="title">Name:</label>
+            <input type="text" class="form-control" id="name"
+            [(ngModel)]="jewel.name"
+            name="name">
+          </div>
+          <div class="mb-3">
+            <label for="description">Description:</label>
+            <textarea class="form-control" id="description"
+            [(ngModel)]="jewel.description" 
+            name="decription"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="material">Material:</label>
+            <input type="text" class="form-control" id="material" 
+            [(ngModel)]="jewel.material"
+            name="material">
+          </div>
+          <div class="mb-3">
+            <label for="image">Image URL:</label>
+            <input type="text" class="form-control" id="image" 
+            [(ngModel)]="jewel.image"
+            name="image">
+          </div>
+          <div class="mb-3">
+            <label for="price">Price:</label>
+            <input type="number" class="form-control" id="price" 
+            [(ngModel)]="jewel.price"
+            name="price">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

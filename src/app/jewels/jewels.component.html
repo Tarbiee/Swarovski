@@ -1,14 +1,59 @@
-<div class="d-flex justify-content-around flex-wrap">
-    <div>
-        <div class="card" style="width: 18rem;">
-            <img src={{}} class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">{{}}</h5>
-              <p class="card-text">{{}}</p>
-              <a href="#" class="btn btn-primary">{{}}</a>
+<div class="container">
+    <div class="row" *ngIf="jewels.length > 0">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let jewel of jewels">
+        <div class="card h-70">
+          <img src="{{jewel.image}}" class="card-img-top" alt="...">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">{{jewel.name}}</h5>
+            <p class="card-text">{{jewel.description}}</p>
+            <p class="card-text mt-auto">{{jewel.price}}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <a href="#" class="btn btn-outline-primary btn-sm">
+                <i class="bi bi-cart"></i>
+              </a>
+              <a [routerLink]="'/editjewel/' + jewel.id" class="btn btn-outline-secondary btn-sm">
+                <i class="bi bi-pencil"></i>
+              </a>
+              <a class="btn btn-outline-danger btn-sm" (click)="onDelete(jewel.id)">
+                <i class="bi bi-trash"></i>
+              </a>
             </div>
           </div>
+        </div>
+      </div>
     </div>
-<hr>
-</div>
-
+  </div>
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Jewel</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Your form or content for editing goes here -->
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name"  name="name">
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <textarea class="form-control" id="description"  name="description"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="price" class="form-label">Price</label>
+              <input type="number" class="form-control" id="price"  name="price">
+            </div>
+            <!-- Add other fields as needed -->
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" >Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

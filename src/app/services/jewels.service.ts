@@ -15,6 +15,21 @@ export class JewelsService {
 
   getAllJewels(): Observable<Jewelry[]>{
     return this.http.get<Jewelry[]>(this.baseUrl);
+  }
 
+  createJewel(jewel: Jewelry): Observable<Jewelry>{
+    return this.http.post<Jewelry>(this.baseUrl ,jewel)
+  }
+
+  editJewel(id: number): Observable<Jewelry>{
+    return this.http.get<Jewelry>(`${this.baseUrl}/${id}`)
+  }
+
+  updateJewel(jewel: Jewelry): Observable<Jewelry> {
+    return this.http.put<Jewelry>(`${this.baseUrl}/${jewel.id}`, jewel);
+  }
+
+  deleteJewel(id: number): Observable<void>{
+    return this.http.delete<void>(`${this.baseUrl}/${id}`)
   }
 }

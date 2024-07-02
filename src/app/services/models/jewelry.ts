@@ -1,5 +1,5 @@
 export interface Jewelry{
-    id: number;
+    id?: number;
     name: string;
     image: string;
     material: string;

@@ -19,7 +19,7 @@ const routes: Routes = [
     component:AddJewelComponent
   },
   {
-    path: 'editjewel',
+    path: 'editjewel/:id',
     component:EditJewelsComponent
   }
 ];
