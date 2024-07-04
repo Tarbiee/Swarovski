@@ -8,28 +8,28 @@ import { Observable } from 'rxjs';
 })
 export class JewelsService {
 
-  private baseUrl:string ="http://localhost:3000/jewelry";
+  private baseUrl:string ="https://localhost:7188/api/Jewel";
   constructor(
     private http: HttpClient
   ) { }
 
   getAllJewels(): Observable<Jewelry[]>{
-    return this.http.get<Jewelry[]>(this.baseUrl);
+    return this.http.get<Jewelry[]>(`${this.baseUrl}/getAllJewels`);
   }
 
   createJewel(jewel: Jewelry): Observable<Jewelry>{
-    return this.http.post<Jewelry>(this.baseUrl ,jewel)
+    return this.http.post<Jewelry>(`${this.baseUrl}/addJewel` ,jewel)
   }
 
   editJewel(id: number): Observable<Jewelry>{
-    return this.http.get<Jewelry>(`${this.baseUrl}/${id}`)
+    return this.http.get<Jewelry>(`${this.baseUrl}/getById/${id}`)
   }
 
   updateJewel(jewel: Jewelry): Observable<Jewelry> {
-    return this.http.put<Jewelry>(`${this.baseUrl}/${jewel.id}`, jewel);
+    return this.http.put<Jewelry>(`${this.baseUrl}/updateJewel/${jewel.id}`, jewel);
   }
 
   deleteJewel(id: number): Observable<void>{
-    return this.http.delete<void>(`${this.baseUrl}/${id}`)
+    return this.http.delete<void>(`${this.baseUrl}/deleteJewel/${id}`)
   }
 }

@@ -11,6 +11,7 @@ import { EditJewelsComponent } from './edit-jewels/edit-jewels.component';
 import { HomeComponent } from './home/home.component';
 import {  HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     AddJewelComponent,
     JewelsComponent,
     EditJewelsComponent,
-    HomeComponent
+    HomeComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

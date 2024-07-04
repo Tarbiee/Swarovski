@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { JewelsComponent } from './jewels/jewels.component';
 import { AddJewelComponent } from './add-jewel/add-jewel.component';
 import { EditJewelsComponent } from './edit-jewels/edit-jewels.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'editjewel/:id',
     component:EditJewelsComponent
+  },
+  {
+    path: 'cart',
+    component:CartComponent
   }
 ];
 
